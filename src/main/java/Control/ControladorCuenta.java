@@ -44,6 +44,10 @@ public class ControladorCuenta {
     public void mostrarDatos(){
     JOptionPane.showMessageDialog(null, cliente.mostrarDatosCliente());
     }
+        
+    public void consultarSaldo(){
+    JOptionPane.showMessageDialog(null,"Saldo actual: $"+cliente.getCuenta().getSaldoCuenta());
+    }
 
 
 }
