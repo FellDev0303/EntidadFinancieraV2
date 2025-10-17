@@ -38,5 +38,23 @@ public class CuentaCorriente extends Cuenta {
 
         return false;
     }
-
+        @Override
+    public boolean consignar(double monto) {
+        if (monto <= 0) {
+            return false;
+        }
+        saldoCuenta += monto;
+        return true;
+    }
+    
+    public boolean consignarSobregiro(double monto) {
+        if (monto <= 0) {
+            return false;
+        }
+        if (cupoSobregiro + monto > LIMITE_MAXIMO) {
+            return false;
+        }
+        cupoSobregiro += monto;
+        return true;
+    }
 }
