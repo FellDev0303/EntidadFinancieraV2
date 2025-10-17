@@ -32,4 +32,7 @@ public class Cliente {
     public void setCuenta(Cuenta cuenta) {
         this.cuenta = cuenta;
     }
+        public String mostrarDatosCliente() {
+        return "Cliente: " + nombre + "\n" + cuenta.mostrarDatos();
+    }  
 }
