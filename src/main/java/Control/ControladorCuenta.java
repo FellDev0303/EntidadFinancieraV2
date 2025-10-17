@@ -28,7 +28,17 @@ public class ControladorCuenta {
         } else {
             JOptionPane.showMessageDialog(null, "Error. El monto debe ser mayor que cero.");
         }
+    }
 
+    public void retirar() {
+        double monto = Double.parseDouble(JOptionPane.showInputDialog("Ingrese la cantidad a retirar: "));
+        boolean exito = cliente.getCuenta().retirar(monto);
+
+        if (exito) {
+            JOptionPane.showMessageDialog(null, "Retiro exitoso. \n Nuevo saldo: $" + cliente.getCuenta().getSaldoCuenta());
+        } else {
+            JOptionPane.showMessageDialog(null, "Error. Saldo insuficiente(Ahorros)o sobregiro excedido(Corriente).");
+        }
     }
 
 }
