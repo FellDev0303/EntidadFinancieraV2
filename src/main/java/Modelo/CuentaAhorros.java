@@ -20,5 +20,16 @@ public class CuentaAhorros extends Cuenta {
     public double getTasaInteres() {
         return tasaInteres;
     }
+    public double calcularIntereses() {
+        return saldoCuenta * (tasaInteres / 100);
+    }
+
+    @Override
+    public String mostrarDatos() {
+        return super.mostrarDatos()
+                + "\nTipo de cuenta: Ahorros"
+                + "\nTasa de interés: " + tasaInteres + "%"
+                + "\nInterés generado: $" + calcularIntereses();
+    }
 }
 
