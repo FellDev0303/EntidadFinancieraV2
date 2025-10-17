@@ -17,5 +17,26 @@ public class CuentaCorriente extends Cuenta {
         super(numeroCuenta, saldoCuenta, titular, fechaApertura);
         this.cupoSobregiro = cupoSobregiro;
     }
+    
+    @Override
+    public boolean retirar(double monto) {
+        if (monto <= 0) {
+            return false;
+        }
+
+        if (monto <= saldoCuenta) {
+            saldoCuenta -= monto;
+            return true;
+        }
+
+        double faltante = monto - saldoCuenta;
+        if (faltante <= cupoSobregiro) {
+            saldoCuenta = 0;
+            cupoSobregiro -= faltante;
+            return true;
+        }
+
+        return false;
+    }
 
 }
