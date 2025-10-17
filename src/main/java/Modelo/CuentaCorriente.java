@@ -57,4 +57,19 @@ public class CuentaCorriente extends Cuenta {
         cupoSobregiro += monto;
         return true;
     }
+    
+    @Override
+    public String mostrarDatos() {
+        return "Titular: " + titular
+                + "\nNúmero de cuenta: " + numeroCuenta
+                + "\nFecha de apertura: " + fechaApertura
+                + "\nTipo de cuenta: Corriente"
+                + "\nSaldo actual (solo cuenta): $" + saldoCuenta
+                + "\nCupo de sobregiro disponible: $" + cupoSobregiro
+                + "\nSaldo total disponible (saldo + sobregiro): $" + (saldoCuenta + cupoSobregiro);
+    }
+
+    public double getCupoSobregiro() {
+        return cupoSobregiro;
+    }
 }
