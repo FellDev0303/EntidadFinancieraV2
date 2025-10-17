@@ -18,4 +18,17 @@ public class ControladorCuenta {
     public ControladorCuenta(Cliente cliente) {
         this.cliente = cliente;
     }
+
+    public void consignar() {
+        double monto = Double.parseDouble(JOptionPane.showInputDialog("Ingrese el monto a consignar: "));
+        boolean exito = cliente.getCuenta().consignar(monto);
+
+        if (exito) {
+            JOptionPane.showMessageDialog(null, "Consignación exitosa. \n Nuevo saldo: $" + cliente.getCuenta().getSaldoCuenta());
+        } else {
+            JOptionPane.showMessageDialog(null, "Error. El monto debe ser mayor que cero.");
+        }
+
+    }
+
 }
