@@ -37,7 +37,7 @@ public class Cuenta {
     public String getFechaApertura() {
         return fechaApertura;
     }
-    
+
     // Sobrecarga de consignar
     public boolean consignar(double monto) {
         return consignar(monto, false);
@@ -50,7 +50,7 @@ public class Cuenta {
         }
         return false;
     }
-    
+
     public boolean retirar(double monto) {
         if (monto > 0 && monto <= saldoCuenta) {
             saldoCuenta -= monto;
@@ -59,6 +59,11 @@ public class Cuenta {
         return false;
     }
 
-
+    public String mostrarDatos() {
+        return "Titular: " + titular
+                + "\nNúmero de cuenta: " + numeroCuenta
+                + "\nFecha de apertura: " + fechaApertura
+                + "\nSaldo actual: $" + saldoCuenta;
+    }
 
 }
