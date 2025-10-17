@@ -50,6 +50,15 @@ public class Cuenta {
         }
         return false;
     }
+    
+    public boolean retirar(double monto) {
+        if (monto > 0 && monto <= saldoCuenta) {
+            saldoCuenta -= monto;
+            return true;
+        }
+        return false;
+    }
+
 
 
 }
