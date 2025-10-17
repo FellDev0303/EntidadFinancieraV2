@@ -40,5 +40,10 @@ public class ControladorCuenta {
             JOptionPane.showMessageDialog(null, "Error. Saldo insuficiente(Ahorros)o sobregiro excedido(Corriente).");
         }
     }
+        
+    public void mostrarDatos(){
+    JOptionPane.showMessageDialog(null, cliente.mostrarDatosCliente());
+    }
+
 
 }
